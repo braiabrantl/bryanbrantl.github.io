@@ -188,3 +188,93 @@ footer {
   color: #ccc;
   font-size: 0.9rem;
 }
+
+/* =========================================
+   CARDS DE PROJETO (Horizontal)
+   ========================================= */
+
+/* Container para organizar a lista */
+.projects-container {
+  display: flex;
+  flex-direction: column; /* Um embaixo do outro */
+  gap: 20px;
+  max-width: 900px; /* Largura máxima para não ficar muito esticado */
+  margin: 0 auto;
+}
+
+/* O Card Horizontal */
+.project-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border-top: 4px solid var(--primary-color); /* A mesma borda azul */
+  padding: 20px;
+  
+  display: flex;       /* Coloca imagem e texto lado a lado */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 30px;           /* Espaço entre a imagem e o texto */
+  text-align: left;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de "Levantar" ao passar o mouse */
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Estilo da Imagem (O retangulo arredondado) */
+.project-img-wrapper {
+  flex-shrink: 0; /* Impede a imagem de ser esmagada */
+  width: 250px;   /* Largura fixa da imagem */
+  height: 160px;
+  border-radius: 15px; /* Bordas bem arredondadas igual ao desenho */
+  overflow: hidden;
+  border: 2px solid #eee; /* Uma borda fina opcional */
+}
+
+.project-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o retangulo sem deformar */
+}
+
+/* Estilos do Texto */
+.project-info h3 {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase; /* Deixa o título em MAIÚSCULO igual ao desenho */
+  letter-spacing: 1px;
+}
+
+.project-info .description {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.project-info .authors {
+  font-size: 0.85rem;
+  color: var(--primary-color); /* Autores em azul para destaque */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   RESPONSIVIDADE (Celular)
+   ========================================= */
+@media (max-width: 768px) {
+  .project-card {
+    flex-direction: column; /* No celular, a imagem fica em cima */
+    align-items: flex-start;
+  }
+  
+  .project-img-wrapper {
+    width: 100%; /* Imagem ocupa a largura toda */
+    height: 200px;
+    margin-bottom: 10px;
+  }
+}
