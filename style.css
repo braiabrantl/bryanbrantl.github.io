@@ -263,6 +263,13 @@ footer {
   letter-spacing: 0.5px;
 }
 
+a.project-card {
+  text-decoration: none; /* Tira o sublinhado */
+  color: inherit;        /* Mantém a cor original do texto */
+  display: flex;         /* Garante que o layout continue lado a lado */
+  width: 100%;           /* Garante que ocupe o espaço certo */
+}
+
 /* =========================================
    RESPONSIVIDADE (Celular)
    ========================================= */
